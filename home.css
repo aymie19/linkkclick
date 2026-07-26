@@ -1,0 +1,1789 @@
+@charset "utf-8";
+
+
+/*=====================================
+RESET
+=====================================*/
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:#111;
+
+    color:#eee;
+
+    font-family:"Times New Roman", serif;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/*=====================================
+SCROLLBAR
+=====================================*/
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#666;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#b79b76;
+
+}
+
+
+
+/*=====================================
+NAVBAR
+=====================================*/
+
+
+#navbar{
+
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+
+    width:100%;
+
+    height:100px;
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    padding:0 80px;
+
+
+    z-index:1000;
+
+
+    background:
+
+    linear-gradient(
+
+        rgba(0,0,0,.85),
+
+        rgba(0,0,0,.35),
+
+        transparent
+
+    );
+
+
+    transition:.4s;
+	
+	 text-transform:uppercase;
+
+
+}
+
+
+
+/* left & right */
+
+
+#nav-left,
+#nav-right{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:45px;
+
+
+}
+
+
+
+/* links */
+
+
+#navbar a{
+
+
+    color:#fff;
+
+
+    text-decoration:none;
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:12px;
+
+
+    letter-spacing:5px;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+#navbar a:hover{
+
+
+    color:#b79b76;
+
+
+}
+
+
+
+/*=====================================
+LOGO
+=====================================*/
+
+
+#logo{
+
+
+    position:absolute;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+}
+
+
+
+#logo img{
+
+
+    width:130px;
+
+
+    display:block;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+#logo img:hover{
+
+
+    transform:scale(1.03);
+
+
+}
+
+
+
+/*=====================================
+DROPDOWN
+=====================================*/
+
+
+#dropdown{
+
+
+    position:relative;
+
+
+}
+
+
+
+#dropdown-content{
+
+
+    position:absolute;
+
+
+    top:42px;
+
+    right:0;
+
+
+    width:240px;
+
+
+    background:#151311;
+
+
+    border:1px solid rgba(255,255,255,.15);
+
+
+    overflow:hidden;
+
+
+    opacity:0;
+
+
+    visibility:hidden;
+
+
+    transform:translateY(12px);
+
+
+    transition:.35s;
+
+
+}
+
+
+
+#dropdown-content a{
+
+
+    display:block;
+
+
+    padding:16px 26px;
+
+
+    font-size:11px;
+
+
+    letter-spacing:2px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+#dropdown-content a:hover{
+
+
+    background:#b79b76;
+
+
+    color:#111;
+
+
+    padding-left:34px;
+
+
+}
+
+
+
+#dropdown:hover #dropdown-content{
+
+
+    opacity:1;
+
+
+    visibility:visible;
+
+
+    transform:translateY(0);
+
+
+}
+
+
+
+
+
+/*=====================================
+HERO VIDEO SLIDER
+=====================================*/
+
+
+#home{
+
+
+    position:relative;
+
+
+    width:100%;
+
+
+    height:100vh;
+
+
+    overflow:hidden;
+
+
+    background:#000;
+
+
+}
+
+
+
+.slide {
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity 1s ease;
+
+}
+
+
+.slide.active {
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+.slide video,
+.slide img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transform:scale(1.02);
+
+}
+/*=====================================
+OVERLAY
+=====================================*/
+
+
+#dark-overlay,
+#dark-overlay2,
+#dark-overlay3{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.90) 0%,
+
+        rgba(0,0,0,.55) 40%,
+
+        rgba(0,0,0,.15) 100%
+
+    );
+
+
+}
+
+
+
+/*=====================================
+HERO TEXT
+=====================================*/
+
+
+#hero-text1,
+#hero-text2,
+#hero-text3{
+
+
+    position:absolute;
+
+
+    left:80px;
+
+
+    bottom:120px;
+
+
+    z-index:20;
+
+
+    max-width:760px;
+
+
+}
+
+
+
+#hero-text1 p,
+#hero-text2 p,
+#hero-text3 p{
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:12px;
+
+
+    letter-spacing:10px;
+
+
+    color:#b79b76;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+#hero-text1 h1,
+#hero-text2 h1,
+#hero-text3 h1{
+
+
+    font-size:92px;
+
+
+    font-weight:400;
+
+
+    line-height:.92;
+
+
+    letter-spacing:10px;
+
+
+    color:#fff;
+
+
+    margin-bottom:40px;
+
+
+    text-transform:uppercase;
+
+
+    text-shadow:0 10px 30px rgba(0,0,0,.45);
+
+
+}
+
+
+
+/*=====================================
+BUTTON
+=====================================*/
+
+
+#hero-text1 a,
+#hero-text2 a,
+#hero-text3 a{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    min-width:240px;
+
+
+    height:60px;
+
+
+    border:1px solid rgba(255,255,255,.55);
+
+
+    color:#fff;
+
+
+    text-decoration:none;
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:12px;
+
+
+    letter-spacing:5px;
+
+
+    transition:.35s;
+
+
+    backdrop-filter:blur(4px);
+
+
+}
+
+
+
+#hero-text1 a:hover,
+#hero-text2 a:hover,
+#hero-text3 a:hover{
+
+
+    background:#fff;
+
+
+    color:#111;
+
+
+    transform:translateY(-3px);
+
+
+}
+
+/*=====================================
+SLIDER ARROWS
+=====================================*/
+
+
+#prev,
+#next{
+
+
+    position:absolute;
+
+
+    top:50%;
+
+
+    transform:translateY(-50%);
+
+
+    width:58px;
+
+
+    height:58px;
+
+
+    border:1px solid rgba(255,255,255,.35);
+
+
+    background:rgba(0,0,0,.25);
+
+
+    color:#fff;
+
+
+    font-size:28px;
+
+
+    cursor:pointer;
+
+
+    transition:.35s;
+
+
+    z-index:50;
+
+
+}
+
+
+
+#prev:hover,
+#next:hover{
+
+
+    background:#b79b76;
+
+
+    border-color:#b79b76;
+
+
+    color:#111;
+
+
+}
+
+
+
+#prev{
+
+
+    left:40px;
+
+
+}
+
+
+
+#next{
+
+
+    right:40px;
+
+
+}
+
+
+
+/*=====================================
+SLIDER DOT INDICATORS
+=====================================*/
+
+
+#dots{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:15px;
+
+    z-index:100;
+
+}
+
+
+.dot{
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:rgba(255,255,255,0.5);
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.dot.active{
+
+
+    background:#fff;
+
+
+    transform:scale(1.3);
+
+
+}
+/*=====================================
+MOBILE HERO
+=====================================*/
+
+
+@media(max-width:900px){
+
+
+#home{
+
+
+    height:100vh;
+
+
+}
+
+
+
+#hero-text1,
+#hero-text2,
+#hero-text3{
+
+
+    left:30px;
+
+
+    right:30px;
+
+
+    bottom:90px;
+
+
+}
+
+
+
+#hero-text1 h1,
+#hero-text2 h1,
+#hero-text3 h1{
+
+
+    font-size:52px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+#hero-text1 p,
+#hero-text2 p,
+#hero-text3 p{
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+#hero-text1 a,
+#hero-text2 a,
+#hero-text3 a{
+
+
+    width:100%;
+
+
+    max-width:260px;
+
+
+}
+
+
+
+#prev,
+#next{
+
+
+    width:46px;
+
+
+    height:46px;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+#prev{
+
+
+    left:15px;
+
+
+}
+
+
+
+#next{
+
+
+    right:15px;
+
+
+}
+
+
+}
+
+
+
+/*=====================================
+TITLE
+=====================================*/
+
+
+#title-about,
+#title-character{
+
+
+    text-align:center;
+
+
+    margin-bottom:90px;
+
+
+}
+
+
+
+#title-about p,
+#title-character p{
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:12px;
+
+
+    letter-spacing:10px;
+
+
+    color:#b79b76;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+#title-about h2,
+#title-character h2{
+
+
+    margin-top:20px;
+
+
+    font-size:76px;
+
+
+    font-weight:400;
+
+
+    letter-spacing:12px;
+
+
+    color:#fff;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
+/*=====================================
+ABOUT
+=====================================*/
+
+
+#about{
+
+
+    padding:180px 80px;
+
+
+    background:#111;
+
+
+}
+
+
+
+#about-container{
+
+
+    width:min(1400px,100%);
+
+
+    margin:auto;
+
+
+    display:grid;
+
+
+    grid-template-columns:1.5fr .8fr;
+
+
+    gap:120px;
+
+
+    align-items:start;
+
+
+}
+
+
+
+#about-text p{
+
+
+    color:#cfcfcf;
+
+
+    font-size:21px;
+
+
+    line-height:2;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+#info-box{
+
+
+    border-left:2px solid #b79b76;
+
+
+    padding-left:45px;
+
+
+}
+
+
+
+#info-box p{
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:11px;
+
+
+    letter-spacing:5px;
+
+
+    color:#888;
+
+
+    margin-top:35px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+#info-box p:first-child{
+
+
+    margin-top:0;
+
+
+}
+
+
+
+#info-box h3{
+
+
+    margin-top:12px;
+
+
+    font-size:28px;
+
+
+    font-weight:400;
+
+
+    color:#fff;
+
+
+    letter-spacing:2px;
+
+
+}
+
+
+
+
+
+/*=====================================
+STORY
+=====================================*/
+
+
+#story{
+
+
+    background:#171512;
+
+
+    padding:180px 18%;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+}
+
+
+
+#story::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    width:120px;
+
+
+    height:2px;
+
+
+    background:#b79b76;
+
+
+}
+
+
+
+#story h2{
+
+
+    font-size:72px;
+
+
+    font-weight:400;
+
+
+    letter-spacing:10px;
+
+
+    margin-bottom:50px;
+
+
+    color:#fff;
+
+
+}
+
+
+
+#story p{
+
+
+    color:#bdbdbd;
+
+
+    font-size:21px;
+
+
+    line-height:2.1;
+
+
+    max-width:900px;
+
+
+    margin:0 auto 35px;
+
+
+}
+
+
+
+/*=====================================
+RESPONSIVE
+=====================================*/
+
+
+@media(max-width:900px){
+
+
+#about{
+
+
+    padding:100px 30px;
+
+
+}
+
+
+
+#about-container{
+
+
+    grid-template-columns:1fr;
+
+
+    gap:70px;
+
+
+}
+
+
+
+#story{
+
+
+    padding:100px 30px;
+
+
+}
+
+
+
+#story h2{
+
+
+    font-size:42px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+#story p{
+
+
+    font-size:18px;
+
+
+}
+
+
+
+#title-about h2,
+#title-character h2{
+
+
+    font-size:46px;
+
+
+}
+
+
+}
+
+/*=====================================
+CHARACTERS
+=====================================*/
+
+
+#characters{
+
+
+    background:#111;
+
+
+    padding:180px 80px;
+
+
+}
+
+
+
+#character-grid{
+
+
+    width:min(1500px,100%);
+
+
+    margin:auto;
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(3,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+/*=====================================
+CHARACTER CARDS
+=====================================*/
+
+
+#cheng-card,
+#luguang-card,
+#qiaoling-card,
+#litianchen-card,
+#qianjin-card,
+#liuxiao-card,
+#xiafei-card,
+#vein-card,
+#wangqing-card{
+
+
+    position:relative;
+
+
+    min-height:300px;
+
+
+    padding:45px;
+
+
+    border:1px solid rgba(255,255,255,.12);
+
+
+    background:
+
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(255,255,255,.02),
+
+        rgba(255,255,255,0)
+
+    );
+
+
+    overflow:hidden;
+
+
+    transition:.45s ease;
+
+
+}
+
+
+
+#cheng-card::before,
+#luguang-card::before,
+#qiaoling-card::before,
+#litianchen-card::before,
+#qianjin-card::before,
+#liuxiao-card::before,
+#xiafei-card::before,
+#vein-card::before,
+#wangqing-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+
+    top:0;
+
+
+    width:0;
+
+
+    height:3px;
+
+
+    background:#b79b76;
+
+
+    transition:.45s;
+
+
+}
+
+
+
+#cheng-card:hover,
+#luguang-card:hover,
+#qiaoling-card:hover,
+#litianchen-card:hover,
+#qianjin-card:hover,
+#liuxiao-card:hover,
+#xiafei-card:hover,
+#vein-card:hover,
+#wangqing-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+    border-color:#b79b76;
+
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45);
+
+
+}
+
+
+
+#cheng-card:hover::before,
+#luguang-card:hover::before,
+#qiaoling-card:hover::before,
+#litianchen-card:hover::before,
+#qianjin-card:hover::before,
+#liuxiao-card:hover::before,
+#xiafei-card:hover::before,
+#vein-card:hover::before,
+#wangqing-card:hover::before{
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+/*=====================================
+NUMBER
+=====================================*/
+
+
+#cheng-card span,
+#luguang-card span,
+#qiaoling-card span,
+#litianchen-card span,
+#qianjin-card span,
+#liuxiao-card span,
+#xiafei-card span,
+#vein-card span,
+#wangqing-card span{
+
+
+    display:block;
+
+
+    color:#b79b76;
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:12px;
+
+
+    letter-spacing:6px;
+
+
+    margin-bottom:28px;
+
+
+}
+
+
+
+
+
+/*=====================================
+CARD TITLE
+=====================================*/
+
+
+#cheng-card h3,
+#luguang-card h3,
+#qiaoling-card h3,
+#litianchen-card h3,
+#qianjin-card h3,
+#liuxiao-card h3,
+#xiafei-card h3,
+#vein-card h3,
+#wangqing-card h3{
+
+
+    font-size:30px;
+
+
+    font-weight:400;
+
+
+    letter-spacing:4px;
+
+
+    line-height:1.2;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+#cheng-card h3 a{
+
+
+    color:#fff;
+
+
+    text-decoration:none;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+#cheng-card:hover h3 a{
+
+
+    color:#b79b76;
+
+
+}
+
+
+
+
+
+/*=====================================
+DESCRIPTION
+=====================================*/
+
+
+#cheng-card p,
+#luguang-card p,
+#qiaoling-card p,
+#litianchen-card p,
+#qianjin-card p,
+#liuxiao-card p,
+#xiafei-card p,
+#vein-card p,
+#wangqing-card p{
+
+
+    color:#aaa;
+
+
+    line-height:2;
+
+
+    font-size:17px;
+
+
+    max-width:320px;
+
+
+}
+
+
+
+
+
+/*=====================================
+CARD HOVER TEXT
+=====================================*/
+
+
+#cheng-card::after,
+#luguang-card::after,
+#qiaoling-card::after,
+#litianchen-card::after,
+#qianjin-card::after,
+#liuxiao-card::after,
+#xiafei-card::after,
+#vein-card::after,
+#wangqing-card::after{
+
+
+    content:"VIEW ARCHIVE →";
+
+
+    position:absolute;
+
+
+    left:45px;
+
+
+    bottom:40px;
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:10px;
+
+
+    letter-spacing:4px;
+
+
+    color:rgba(255,255,255,.45);
+
+
+    transition:.35s;
+
+
+}
+
+
+
+#cheng-card:hover::after,
+#luguang-card:hover::after,
+#qiaoling-card:hover::after,
+#litianchen-card:hover::after,
+#qianjin-card:hover::after,
+#liuxiao-card:hover::after,
+#xiafei-card:hover::after,
+#vein-card:hover::after,
+#wangqing-card:hover::after{
+
+
+    color:#b79b76;
+
+
+}
+
+
+
+
+
+/*=====================================
+FOOTER
+=====================================*/
+
+
+#footer{
+
+
+    background:#0b0b0b;
+
+
+    padding:60px 30px;
+
+
+    text-align:center;
+
+
+    color:#777;
+
+
+    font-family:Arial,sans-serif;
+
+
+    font-size:12px;
+
+
+    letter-spacing:5px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
+/*=====================================
+RESPONSIVE
+=====================================*/
+
+
+@media(max-width:1100px){
+
+
+#character-grid{
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+#characters{
+
+
+    padding:100px 30px;
+
+
+}
+
+
+
+#character-grid{
+
+
+    grid-template-columns:1fr;
+
+
+    gap:25px;
+
+
+}
+
+
+
+#cheng-card,
+#luguang-card,
+#qiaoling-card,
+#litianchen-card,
+#qianjin-card,
+#liuxiao-card,
+#xiafei-card,
+#vein-card,
+#wangqing-card{
+
+
+    min-height:240px;
+
+
+    padding:35px;
+
+
+}
+
+
+
+#cheng-card h3,
+#luguang-card h3,
+#qiaoling-card h3,
+#litianchen-card h3,
+#qianjin-card h3,
+#liuxiao-card h3,
+#xiafei-card h3,
+#vein-card h3,
+#wangqing-card h3{
+
+
+    font-size:24px;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+#cheng-card::after,
+#luguang-card::after,
+#qiaoling-card::after,
+#litianchen-card::after,
+#qianjin-card::after,
+#liuxiao-card::after,
+#xiafei-card::after,
+#vein-card::after,
+#wangqing-card::after{
+
+
+    left:35px;
+
+
+    bottom:30px;
+
+
+}
+
+
+}
+
+a{
+    color:#FFFFFF; /* normal */
+    text-decoration:none;
+}
+
+
+a:hover{
+    color:#b79b76; /* when mouse is over */
+}
+
+
+a:visited{
+    color:#b79b76; /* after clicked */
+}
+
+
+a:active{
+    color:red; /* while clicking */
+}
